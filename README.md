@@ -1,5 +1,11 @@
 # CommonMark Extensions
 
+[![Tests](https://github.com/curder/commonmark-extensions/actions/workflows/run-tests.yml/badge.svg)](https://github.com/curder/commonmark-extensions/actions/workflows/run-tests.yml)
+[![Check & fix styling](https://github.com/curder/commonmark-extensions/actions/workflows/pint-fixer.yml/badge.svg)](https://github.com/curder/commonmark-extensions/actions/workflows/pint-fixer.yml)
+[![Latest Stable Version](http://poser.pugx.org/curder/commonmark-extensions/v)](https://packagist.org/packages/curder/commonmark-extensions)
+[![Total Downloads](http://poser.pugx.org/curder/commonmark-extensions/downloads)](https://packagist.org/packages/curder/commonmark-extensions)
+[![License](http://poser.pugx.org/curder/commonmark-extensions/license)](https://packagist.org/packages/curder/commonmark-extensions)
+
 一个用于 [league/commonmark](https://github.com/thephpleague/commonmark) 的扩展集合,提供了代码组、自定义容器和标题锚点等功能。
 
 ## 功能特性
