@@ -252,8 +252,8 @@ test('can use custom class names for containers', function () {
             ],
         ],
     ]);
-    $environment->addExtension(new CommonMarkCoreExtension());
-    $environment->addExtension(new CodeGroupsExtension());
+    $environment->addExtension(new CommonMarkCoreExtension);
+    $environment->addExtension(new CodeGroupsExtension);
     $converter = new MarkdownConverter($environment);
 
     $markdown = <<<'MD'
@@ -282,8 +282,8 @@ test('can use custom class names for tabs', function () {
             ],
         ],
     ]);
-    $environment->addExtension(new CommonMarkCoreExtension());
-    $environment->addExtension(new CodeGroupsExtension());
+    $environment->addExtension(new CommonMarkCoreExtension);
+    $environment->addExtension(new CodeGroupsExtension);
     $converter = new MarkdownConverter($environment);
 
     $markdown = <<<'MD'
@@ -315,8 +315,8 @@ test('can use custom class names for content', function () {
             ],
         ],
     ]);
-    $environment->addExtension(new CommonMarkCoreExtension());
-    $environment->addExtension(new CodeGroupsExtension());
+    $environment->addExtension(new CommonMarkCoreExtension);
+    $environment->addExtension(new CodeGroupsExtension);
     $converter = new MarkdownConverter($environment);
 
     $markdown = <<<'MD'
@@ -348,8 +348,8 @@ test('can mix default and custom class names', function () {
             ],
         ],
     ]);
-    $environment->addExtension(new CommonMarkCoreExtension());
-    $environment->addExtension(new CodeGroupsExtension());
+    $environment->addExtension(new CommonMarkCoreExtension);
+    $environment->addExtension(new CodeGroupsExtension);
     $converter = new MarkdownConverter($environment);
 
     $markdown = <<<'MD'
@@ -375,8 +375,8 @@ test('can handle empty class name configuration', function () {
             'class_name' => [],
         ],
     ]);
-    $environment->addExtension(new CommonMarkCoreExtension());
-    $environment->addExtension(new CodeGroupsExtension());
+    $environment->addExtension(new CommonMarkCoreExtension);
+    $environment->addExtension(new CodeGroupsExtension);
     $converter = new MarkdownConverter($environment);
 
     $markdown = <<<'MD'
@@ -405,8 +405,8 @@ test('can handle null class name values', function () {
             ],
         ],
     ]);
-    $environment->addExtension(new CommonMarkCoreExtension());
-    $environment->addExtension(new CodeGroupsExtension());
+    $environment->addExtension(new CommonMarkCoreExtension);
+    $environment->addExtension(new CodeGroupsExtension);
     $converter = new MarkdownConverter($environment);
 
     $markdown = <<<'MD'

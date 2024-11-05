@@ -42,7 +42,7 @@ class CodeGroupsParser extends AbstractBlockContinueParser
 
     public function __construct()
     {
-        $this->block = new CodeGroupsBlock();
+        $this->block = new CodeGroupsBlock;
     }
 
     public function getBlock(): AbstractBlock

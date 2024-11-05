@@ -1,6 +1,7 @@
 <?php
 
 use Curder\CommonmarkExtensions\CodeGroupsExtension;
+use Curder\CommonmarkExtensions\CustomContainersExtension;
 use Curder\CommonmarkExtensions\HeadAnchorsExtension;
 use League\CommonMark\Environment\Environment;
 use League\CommonMark\Extension\CommonMark\CommonMarkCoreExtension;
@@ -14,6 +15,11 @@ function getCodeGroupsConverter(array $config = []): MarkdownConverter
 function getHeadAnchorsConverter(array $config = []): MarkdownConverter
 {
     return getConverter([HeadAnchorsExtension::class], $config);
+}
+
+function getCustomContainersConverter(array $config = []): MarkdownConverter
+{
+    return getConverter([CustomContainersExtension::class], $config);
 }
 
 function getConverter(array $extensions = [], array $config = []): MarkdownConverter
