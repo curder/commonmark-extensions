@@ -22,6 +22,7 @@ class CustomContainerRenderer implements NodeRendererInterface
         $prefixClass = $config->get('custom_containers.class_name.prefix');
         $titleClass = $config->get('custom_containers.class_name.title');
         $contentClass = $config->get('custom_containers.class_name.content');
+        $iconEnabled = $config->get('custom_containers.icons.enabled');
 
         $type = $node->getType();
         $title = $node->getTitle();
@@ -29,24 +30,22 @@ class CustomContainerRenderer implements NodeRendererInterface
 
         $innerContent = $childRenderer->renderNodes($node->children());
 
-        $openAttribute = $isOpen ? ['open' => ''] : [];
+        $isDetails = $type === 'details';
 
-        if ($type === 'details') {
-            return new HtmlElement(
-                'details',
-                array_merge(['class' => "{$prefixClass}{$type} {$containerClass}"], $openAttribute),
-                [
-                    new HtmlElement('summary', ['class' => $titleClass], $title),
-                    new HtmlElement('div', ['class' => $contentClass], $innerContent),
-                ]
-            );
-        }
+        $detailsOpenAttribute = ($isDetails && $isOpen) ? ['open' => ''] : [];
+
+        $titleElement = $iconEnabled ?
+            new HtmlElement($isDetails ? 'summary' : 'div', ['class' => $titleClass], [
+                new HtmlElement('div', [], $config->get('custom_containers.icons.'.$type)),
+                new HtmlElement('span', [], $title),
+            ])
+            : new HtmlElement($isDetails ? 'summary' : 'div', ['class' => $titleClass], $title);
 
         return new HtmlElement(
-            'div',
-            ['class' => "{$prefixClass}{$type} {$containerClass}"],
+            $isDetails ? 'details' : 'div',
+            array_merge(['class' => "{$prefixClass}{$type} {$containerClass}"], $detailsOpenAttribute),
             [
-                new HtmlElement('div', ['class' => $titleClass], $title),
+                $titleElement,
                 new HtmlElement('div', ['class' => $contentClass], $innerContent),
             ]
         );
