@@ -1,0 +1,30 @@
+name: Check & fix styling
+
+on: [ push ]
+
+jobs:
+  pint-fixer:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+
+      - name: Run code style fixed by pint
+        uses: aglipanci/laravel-pint-action@latest
+        with:
+          verboseMode: true
+          testMode: false
+          configPath: "pint.json"
+          pintVersion: 1.18.1
+          onlyDirty: false
+
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: Fix styling
