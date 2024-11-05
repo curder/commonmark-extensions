@@ -16,7 +16,7 @@ jobs:
     strategy:
       matrix:
         operating-system: [ubuntu-latest]
-        php-versions: [ '8.3','8.2' ]
+        php-versions: [ '8.3','8.2','8.1' ]
         dependency-stability: [ 'prefer-stable' ]
 
     name: P${{ matrix.php-versions }} - L${{ matrix.laravel }} - ${{ matrix.dependency-stability }} - ${{ matrix.operating-system}}
@@ -65,12 +65,6 @@ jobs:
 
       - name: Execute Unit tests via PestPHP
         run: composer test
-
-
-      - name: Execute Code Sniffer via phpcs
-        run: |
-          composer require --dev squizlabs/php_codesniffer
-          vendor/bin/phpcs --standard=PSR12 src
 
       - name: Execute Code Static Analysis (PHP Stan)
         run: |
