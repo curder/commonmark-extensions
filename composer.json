@@ -1,0 +1,34 @@
+{
+  "name": "curder/commonmark-extensions",
+  "description": "A collection of CommonMark extensions",
+  "type": "library",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Curder\\CommonmarkExtensions\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "curder",
+      "email": "q.curder@gmail.com"
+    }
+  ],
+  "scripts": {
+    "test": "pest",
+    "pint": "pint --test"
+  },
+  "require": {
+    "php": "^8.1",
+    "league/commonmark": "^2.5"
+  },
+  "require-dev": {
+    "pestphp/pest": "^3.5",
+    "laravel/pint": "^1.18"
+  },
+  "config": {
+    "allow-plugins": {
+      "pestphp/pest-plugin": true
+    }
+  }
+}
