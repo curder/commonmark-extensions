@@ -26,6 +26,9 @@
     "pestphp/pest": "^3.5",
     "laravel/pint": "^1.18"
   },
+  "suggest": {
+    "spatie/laravel-markdown": "^1.10"
+  },
   "config": {
     "allow-plugins": {
       "pestphp/pest-plugin": true
