@@ -62,6 +62,11 @@ Section 1
 ## 标题二 {#anchor-2}
 
 Section 2
+
+<a name="anchor-3"></a>
+### 标题三
+
+Section 3
 ```
 
 ## 安装
